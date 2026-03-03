@@ -21,7 +21,7 @@
   var input = document.getElementById("password-input");
   var error = document.getElementById("password-error");
 
-  if (sessionStorage.getItem("etch-unlocked") === "1") {
+  if (sessionStorage.getItem("presentation-unlocked") === "1") {
     gate.remove();
   } else {
     document.body.style.overflow = "hidden";
@@ -29,7 +29,7 @@
       e.preventDefault();
       var h = await sha256(input.value.trim());
       if (h === HASH) {
-        sessionStorage.setItem("etch-unlocked", "1");
+        sessionStorage.setItem("presentation-unlocked", "1");
         document.body.style.overflow = "";
         gate.classList.add("is-unlocked");
         gate.addEventListener("transitionend", function () {

@@ -343,7 +343,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   gap: 0;
-  background: rgba(15, 18, 41, 0.85);
+  background: rgba(160, 160, 160, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 24px;
@@ -450,7 +450,7 @@ h4 {
   clip-path: inset(100% 0 0 0);
 }
 .site-logo svg {
-  width: 100px;
+  width: 140px;
   height: auto;
 }
 
