@@ -517,6 +517,15 @@ h4 {
   color: var(--surface);
   overflow: hidden;
 }
+.hero__constellation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero__constellation svg {
+  width: 100%;
+  height: 100%;
+}
 .hero__content {
   position: relative;
   z-index: 2;
@@ -558,6 +567,20 @@ h4 {
   font-size: var(--text-mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+.hero__scroll svg {
+  width: 16px;
+  height: 16px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 /* ================================================
