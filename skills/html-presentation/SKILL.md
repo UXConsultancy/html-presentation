@@ -70,21 +70,17 @@ Read the shell template from `${CLAUDE_PLUGIN_ROOT}/templates/base/index.html`.
 1. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/hero.html`
 2. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/stat-cards.html`
 3. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/feature-grid.html`
-4. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/deep-dive.html` — duplicate 3 times with:
-   - Step 1: `{{STEP_NUM}}=1`, `{{STEP_NUM_PADDED}}=01`, `{{STEP_TOTAL_PADDED}}=03`, `{{THEME}}=dark`
-   - Step 2: `{{STEP_NUM}}=2`, `{{STEP_NUM_PADDED}}=02`, `{{STEP_TOTAL_PADDED}}=03`, `{{THEME}}=light`
-   - Step 3: `{{STEP_NUM}}=3`, `{{STEP_NUM_PADDED}}=03`, `{{STEP_TOTAL_PADDED}}=03`, `{{THEME}}=navy`
-5. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/media-content.html` — duplicate 3 times with:
-   - Example 1: `{{EXAMPLE_NUM}}=1`, `{{EXAMPLE_NUM_PADDED}}=01`, `{{EXAMPLE_TOTAL_PADDED}}=03`, `{{THEME}}=charcoal`
-   - Example 2: `{{EXAMPLE_NUM}}=2`, `{{EXAMPLE_NUM_PADDED}}=02`, `{{EXAMPLE_TOTAL_PADDED}}=03`, `{{THEME}}=off-white`
-   - Example 3: `{{EXAMPLE_NUM}}=3`, `{{EXAMPLE_NUM_PADDED}}=03`, `{{EXAMPLE_TOTAL_PADDED}}=03`, `{{THEME}}=deep`
+4. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/deep-dive.html` — single instance with:
+   - `{{STEP_NUM}}=1`, `{{STEP_NUM_PADDED}}=01`, `{{STEP_TOTAL_PADDED}}=01`, `{{THEME}}=dark`
+5. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/media-content.html` — single instance with:
+   - `{{EXAMPLE_NUM}}=1`, `{{EXAMPLE_NUM_PADDED}}=01`, `{{EXAMPLE_TOTAL_PADDED}}=01`, `{{THEME}}=charcoal`
 6. Read `${CLAUDE_PLUGIN_ROOT}/templates/sections/cta.html`
 
-**Replace `{{INDEX}}`** on each section sequentially: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
+**Replace `{{INDEX}}`** on each section sequentially: 1, 2, 3, 4, 5, 6.
 
 **Insert the assembled sections** between `<!-- SECTIONS_START -->` and `<!-- SECTIONS_END -->`.
 
-**Generate progress rail nodes.** For each section (10 total), create a `<li>` element:
+**Generate progress rail nodes.** For each section (6 total), create a `<li>` element:
 
 ```html
 <li>
@@ -101,13 +97,9 @@ The first node should have the `is-active` class added. Use these section IDs an
 | 1   | hero            | Introduction |
 | 2   | stat-cards      | Statistics   |
 | 3   | feature-grid    | Features     |
-| 4   | deep-dive-1     | Step 1       |
-| 5   | deep-dive-2     | Step 2       |
-| 6   | deep-dive-3     | Step 3       |
-| 7   | media-content-1 | Example 1    |
-| 8   | media-content-2 | Example 2    |
-| 9   | media-content-3 | Example 3    |
-| 10  | cta             | Get in touch |
+| 4   | deep-dive-1     | Deep dive    |
+| 5   | media-content-1 | Example      |
+| 6   | cta             | Get in touch |
 
 Insert the rail nodes at `<!-- PROGRESS_RAIL_NODES -->`.
 
@@ -138,7 +130,7 @@ python3 -m http.server 8847
 
 ## Structure
 
-- 10 full viewport sections with scroll snap on desktop
+- 6 full viewport sections with scroll snap on desktop
 - Progress rail navigation (fixed left, desktop only)
 - Scroll reveal animations on all content
 - Counter animations on stat numbers
