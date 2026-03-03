@@ -21,7 +21,7 @@ Scaffold full viewport, scroll snapping HTML presentation websites from template
 Ask the user two questions using AskUserQuestion:
 
 1. **Project name** — used for the folder name and HTML `<title>`. Examples: "Q4 Strategy", "Product Launch", "Innovation Pitch"
-2. **Password gate** — "Should the site require a password to view?" If yes, ask for the password in a follow up question
+2. **Password gate** — "Should the site require a password to view?" If yes, ask for the password in a follow up question. **Tell the user:** this is a visual deterrent only, not real security. The password hash is visible in the JavaScript and all content remains in the HTML source. Anyone with browser DevTools can bypass it.
 
 ### Step 2: Create Project Directory
 
@@ -136,6 +136,7 @@ python3 -m http.server 8847
 - Counter animations on stat numbers
 - Responsive (single column on mobile, no snap)
 - Reduced motion support throughout
+- Password gate (if enabled) is a visual deterrent only, not real security. The hash is visible in `script.js` and all content remains in the HTML source.
 
 ## Customisation
 
