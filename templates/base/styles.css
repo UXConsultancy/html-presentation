@@ -568,9 +568,8 @@ h4 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.hero__scroll svg {
-  width: 16px;
-  height: 16px;
+.hero__scroll kbd {
+  display: inline-block;
   animation: scrollBounce 2s ease-in-out infinite;
 }
 @keyframes scrollBounce {
@@ -581,6 +580,24 @@ h4 {
   50% {
     transform: translateY(6px);
   }
+}
+
+/* ---- Icon Pulse (triggers when parent is visible) ---- */
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+.is-visible .stat-card__icon,
+.is-visible .feature__icon,
+.is-visible .feature-grid__highlight-icon {
+  animation: iconPulse 3s ease-in-out infinite;
 }
 
 /* ================================================
